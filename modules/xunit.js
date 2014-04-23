@@ -161,7 +161,7 @@ XUnitExporter.prototype.render = function render() {
 XUnitExporter.prototype.getSerializedXML = function getSerializedXML(xml) {
     "use strict";
     var serializer = new XMLSerializer();
-    return '<?xml version="1.0" encoding="UTF-8"?>' + serializer.serializeToString(this.getXML());
+    return '<?xml version="1.0" encoding="UTF-8"?>' + serializer.serializeToString(xml);
 }
 
 /**

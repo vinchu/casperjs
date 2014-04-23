@@ -1623,8 +1623,8 @@ Tester.prototype.saveResults = function saveResults(format, file) {
     var exporter = require(format).create();
     exporter.setResults(this.suiteResults);
     try {
-        fs.write(file, exporter.render(), 'w');
-        this.casper.echo(f('Result log stored in %s', file), 'INFO', 80);
+        fs.write(filepath, exporter.getSerializedXML(), 'w');
+        this.casper.echo(f('Result log stored in %s', filepath), 'INFO', 80);
     } catch (e) {
         this.casper.echo(f('Unable to write results to %s: %s', file, e), 'ERROR', 80);
     }
