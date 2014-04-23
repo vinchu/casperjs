@@ -150,7 +150,7 @@ XUnitExporter.prototype.render = function render() {
         this._xml.appendChild(suiteNode);
     }.bind(this));
     this._xml.setAttribute('time', utils.ms2seconds(this.results.calculateDuration()));
-    return this._xml;
+    return this.getSerializedXML(this._xml);
 };
 
 /**
